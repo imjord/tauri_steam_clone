@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.help-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  color: #b3b6b4;
+  padding: 0;
+  height: 32px;
+  background-color: #171a21;
+}
+
+.left p:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  cursor: default;
+}
+
+.right p:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  cursor: default;
+}
+
+.left {
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+}
+
+.left p {
+  font-size: 11px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #b3b6b4;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 10%;
+  padding: 0px 15px;
+}
+
+.right p {
+  font-size: 11px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #b3b6b4;
+}
+
+.nav-icon {
+  background-color: rgb(74, 159, 199);
+  padding: 5px 10px;
+}
+
+.guest-box {
+  background-color: rgb(94, 96, 97);
+  padding: 5px 15px;
+  color: #b3b6b4;
+  border-radius: 2px;
+  display: flex;
+  border-right: 2px solid rgb(74, 159, 199);
+}
+
+.guest-box:hover {
+  background-color: rgb(61, 62, 63);
+  cursor: default;
+}
+
+.guest-box p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: rgb(74, 159, 199) !important;
+  margin-left: 5px;
+}
+
+.nav-icon:hover {
+  background-color: rgb(50, 109, 136);
+  cursor: default;
+}
+
+.icon {
+  color: rgb(255, 255, 255);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3b3b3b;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

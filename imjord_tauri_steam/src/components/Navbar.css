@@ -1,0 +1,61 @@
+nav {
+  display: flex;
+  background-color: #171a21;
+  padding: 10px;
+  margin-top: 32px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+}
+
+#arrow {
+  font-size: 19px;
+  margin-right: 14px;
+  color: #b3b6b4;
+  cursor: default;
+}
+
+nav ul li {
+  margin-right: 20px;
+  padding: 0 10px;
+  font-size: 20px;
+}
+/* make the color glow when hover */
+nav ul #link.pending:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+#link {
+  text-decoration: none;
+  color: #b3b6b4;
+}
+
+nav ul #link.active {
+  color: rgb(74, 159, 199);
+  position: relative; /* Ensure pseudo-element is positioned relative to this */
+}
+
+/* Create a pseudo-element for the animated bar */
+nav ul #link.active::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute;
+  bottom: -3px; /* Position the bar just below the link text */
+  left: 50%; /* Position the bar at the middle of the link */
+  transform: translateX(-50%); /* Center the bar horizontally */
+  width: 0; /* Initial width of the bar */
+  height: 3px; /* Height of the bar */
+  background-color: rgb(74, 159, 199);
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out; /* Add a transition for smooth animation */
+}
+
+/* On hover, expand the bar to the width of the link text */
+nav ul #link.active:hover::before {
+  width: 100%;
+}

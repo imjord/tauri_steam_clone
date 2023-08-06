@@ -1,0 +1,141 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 0;
+  background-color: black;
+}
+
+.profile-background {
+  width: 80%;
+  height: 100%;
+  background-color: aliceblue;
+  background-image: url("/giphy.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.profile-content-div {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.8;
+  background-color: #171a21;
+}
+
+.profile-content-title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  color: gainsboro;
+}
+
+.profile-pic {
+  width: 15%;
+  margin: 0 16px;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 200px;
+  margin-left: 20px;
+
+  border-radius: 5px;
+}
+
+.profile-bio {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  margin-left: 50px;
+}
+
+.profile-bio h1 {
+  margin-bottom: 50px;
+}
+
+.profile-level {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  margin-right: 15px;
+}
+
+/* first div */
+.level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+#ribbon {
+  font-size: 30px;
+  margin-right: 14px;
+}
+
+.fav-badge {
+  background-color: #0e1014;
+  color: #b3b6b4;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.profile-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 3px;
+  height: 50px;
+}
+
+.profile-btns button {
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 2px;
+  padding: 10px;
+  margin: 0 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+}
+
+.profile-btns button:hover {
+  background-color: #0e1014;
+  cursor: pointer;
+}
+
+.profile-grid {
+  display: grid;
+  column-gap: 10px;
+}
+
+.level h2 {
+  padding: 8px;
+  border: 1px solid rgb(138, 87, 255);
+  border-radius: 50%;
+  margin-left: 5px;
+}

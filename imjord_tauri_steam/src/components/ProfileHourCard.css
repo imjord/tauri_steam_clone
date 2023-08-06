@@ -1,0 +1,244 @@
+* {
+  --bg-color: #0d1114;
+  --main-bg-color: #25333d;
+}
+
+.grid-container {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  font-size: 30px;
+  border-radius: 7px;
+}
+
+.item1 {
+  display: flex;
+  flex-direction: column;
+  background-color: #2f4658;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 3;
+}
+
+.item2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #25333d;
+  grid-column: 3;
+  grid-row: 1 / span 11;
+}
+.image-border {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.item2 div {
+  margin-top: 30px;
+  text-align: left;
+  padding: 5px;
+}
+
+.item3 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  grid-column: 1 / span 2;
+  grid-row: 4 / span 1;
+}
+.item4 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  grid-column: 1 / span 2;
+  grid-row: 5 / span 1;
+}
+.item5 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  grid-column: 1 / span 2;
+  grid-row: 6 / span 1;
+}
+.item6 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  grid-column: 1 / span 2;
+  grid-row: 7 / span 1;
+}
+.item8 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  grid-column: 1 / span 2;
+  grid-row: 9 / span 1;
+}
+.item7 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  grid-column: 1 / span 2;
+  grid-row: 8 / span 1;
+}
+.game-achivements {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #25333d;
+}
+.game-image {
+  display: flex;
+}
+
+.game-image p {
+  color: gainsboro;
+}
+.item3-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0px 5px;
+}
+
+.item3-wrapper p {
+  font-size: 20px;
+
+  color: gray;
+}
+
+.about-title {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #277cc2;
+  width: 100%;
+  padding: 5px;
+  color: gainsboro;
+}
+
+.favorite-game-image {
+  display: flex;
+  justify-content: space-between;
+  color: gainsboro;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.about-wrapper p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+.online {
+  margin: 0;
+  margin-top: 0 !important;
+}
+
+.online p {
+  text-align: left;
+  font-size: 19px;
+  color: green !important;
+}
+
+.item2 div p {
+  display: flex;
+  padding: 3px;
+  font-size: 19px;
+  color: gainsboro;
+}
+
+.side-span {
+  color: white;
+  font-size: 24px;
+  margin-left: 3px;
+  padding-bottom: 3px;
+}
+.side-p:hover {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+
+.side-p:hover .side-span {
+  text-decoration: none;
+}
+
+.side-container:hover .side-p {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+
+.favorite-game-hours {
+  display: flex;
+  margin-top: 13px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: gainsboro;
+}
+.favorite-game-p p {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 20px;
+  margin-bottom: 13px;
+  color: gray;
+}
+
+.game-hours {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.game-text {
+  font-size: 15px !important;
+}
+
+.game-hours p {
+  font-size: 15px;
+}
+
+.item7 {
+  background-color: transparent !important;
+}
+
+.item7 p {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  color: gainsboro;
+  font-size: 12px !important;
+}
+
+.item7 p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.achivement-p p {
+  font-size: 16px !important;
+  color: gainsboro;
+}
+
+.progress-bar {
+  padding: 5px;
+  margin-bottom: 5px;
+}
