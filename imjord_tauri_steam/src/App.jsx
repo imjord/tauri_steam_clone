@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar.jsx";
 import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
 import "./App.css";
@@ -19,27 +19,31 @@ function App() {
 
   const createWindow = async () => {
     const homeView = new WebviewWindow("home", {
-      url: "/home",
-      height: 1200,
-      width: 1000,
+      url: "/",
+      height: 1100,
+      width: 1800,
       decorations: false,
       fullscreen: false,
-      resizable: true,
+      resizable: false,
       titleBarStyle: "transparent",
       hiddenTitle: true,
     });
     homeView.once("tauri://created", function () {
+      localStorage.setItem("user", true);
       appWindow.close();
-
-      console.log(user);
     });
     homeView.once("tauri://error", function (e) {
-      // an error happened creating the webview window
       console.log(e);
     });
-    setUser(true);
   };
 
+  useEffect(() => {
+    if (localStorage.getItem("user")) {
+      setUser(true);
+    } else {
+      setUser(false);
+    }
+  }, []);
   return (
     <BrowserRouter>
       <div className="main-window">
