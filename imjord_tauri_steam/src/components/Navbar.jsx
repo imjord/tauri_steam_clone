@@ -21,7 +21,7 @@ function Navbar() {
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""
             }
-            to="/"
+            to="/home"
           >
             {" "}
             <li>STORE</li>{" "}

@@ -22,6 +22,7 @@
         "close": true,
         "hide": true,
         "show": true,
+        "create": true,
         "maximize": true,
         "minimize": true,
         "unmaximize": true,
@@ -50,8 +51,8 @@
         "resizable": true,
         "titleBarStyle": "Transparent",
         "hiddenTitle": true,
-        "width": 1760,
-        "height": 1260,
+        "width": 900,
+        "height": 800,
         "decorations": false
       }
     ]

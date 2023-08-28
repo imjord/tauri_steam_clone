@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar.jsx";
-import { appWindow } from "@tauri-apps/api/window";
+import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -15,47 +15,96 @@ import ProjectsPage from "./pages/ProjectsPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CommunityPage from "./pages/CommunityPage.jsx";
 function App() {
+  const [user, setUser] = useState(false);
+
+  const createWindow = async () => {
+    const homeView = new WebviewWindow("home", {
+      url: "/home",
+      height: 1200,
+      width: 1000,
+      decorations: false,
+      fullscreen: false,
+      resizable: true,
+      titleBarStyle: "transparent",
+      hiddenTitle: true,
+    });
+    homeView.once("tauri://created", function () {
+      appWindow.close();
+
+      console.log(user);
+    });
+    homeView.once("tauri://error", function (e) {
+      // an error happened creating the webview window
+      console.log(e);
+    });
+    setUser(true);
+  };
+
   return (
     <BrowserRouter>
       <div className="main-window">
-        <div data-tauri-drag-region className="help-bar">
-          <div data-tauri-drag-region className="left">
-            <p>Steam</p>
-            <p>View</p>
-            <p>Friends</p>
-            <p>Games</p>
-            <p>Help</p>
-          </div>
-          <div data-tauri-drag-region className="right">
-            <p className="nav-icon">
-              <FontAwesomeIcon className="icon" icon={faBullhorn} />
-            </p>
-            <p className="nav-icon">
-              <FontAwesomeIcon className="icon" icon={faEnvelope} />
-            </p>
-            <p className="guest-box">
-              <div>
-                <FontAwesomeIcon icon={faUser} />
+        {user ? (
+          <div>
+            <div data-tauri-drag-region className="help-bar">
+              <div data-tauri-drag-region className="left">
+                <p>Steam</p>
+                <p>View</p>
+                <p>Friends</p>
+                <p>Games</p>
+                <p>Help</p>
               </div>
-              <div>
-                <p>guest</p>
+              <div data-tauri-drag-region className="right">
+                <p className="nav-icon">
+                  <FontAwesomeIcon className="icon" icon={faBullhorn} />
+                </p>
+                <p className="nav-icon">
+                  <FontAwesomeIcon className="icon" icon={faEnvelope} />
+                </p>
+                <p className="guest-box">
+                  <div>
+                    <FontAwesomeIcon icon={faUser} />
+                  </div>
+                  <div>
+                    <p>guest</p>
+                  </div>
+                </p>
+                <p onClick={() => appWindow.minimize()}>_</p>
+                <p>
+                  <FontAwesomeIcon
+                    onClick={() => appWindow.maximize()}
+                    icon={faWindowMaximize}
+                  />
+                </p>
+                <p onClick={() => appWindow.close()}>X</p>
               </div>
-            </p>
-            <p onClick={() => appWindow.minimize()}>_</p>
-            <p>
-              <FontAwesomeIcon
-                onClick={() => appWindow.maximize()}
-                icon={faWindowMaximize}
-              />
-            </p>
-            <p onClick={() => appWindow.close()}>X</p>
+            </div>
+            <div className="steam-nav">
+              <Navbar />
+            </div>
           </div>
-        </div>
-        <div className="steam-nav">
-          <Navbar />
-        </div>
+        ) : (
+          <div className="accounts">
+            <div data-tauri-drag-region className="accounts-header">
+              <div>
+                <p onClick={() => appWindow.close()} className="close-account">
+                  X
+                </p>
+              </div>
+            </div>
+            <div className="accounts-logo">
+              <h1>STEAM</h1>
+            </div>
+            <div className="accounts-title">
+              <h2 data-tauri-drag-region>Who's playing?</h2>{" "}
+            </div>
+            <div className="accounts-pick">
+              <h3>+</h3>
+            </div>
+            <button onClick={createWindow}>Create</button>
+          </div>
+        )}
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/library" element={<ProjectsPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/profile" element={<ProfilePage />} />
