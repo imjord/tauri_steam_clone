@@ -7,6 +7,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.steam-logo {
+  font-size: 10px;
+  color: white;
+  border-radius: 15px;
+  border: 2px solid red;
+}
+
 .help-bar {
   position: absolute;
   top: 0;
@@ -96,6 +103,7 @@ html {
   color: rgb(255, 255, 255);
 }
 /* accounts */
+
 .accounts {
   display: flex;
 

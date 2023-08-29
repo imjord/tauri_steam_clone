@@ -14,6 +14,9 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CommunityPage from "./pages/CommunityPage.jsx";
+
+// image
+import steamLogo from "./assets/images/steamLogo.png";
 function App() {
   const [user, setUser] = useState(false);
 
@@ -38,6 +41,7 @@ function App() {
   };
 
   useEffect(() => {
+    // invoke tauri to see if theres an existing user instead of local storage...
     if (localStorage.getItem("user")) {
       setUser(true);
     } else {
@@ -96,6 +100,9 @@ function App() {
               </div>
             </div>
             <div className="accounts-logo">
+              <div className="steam-logo">
+                <img src={steamLogo} alt="steam-logo" id="steam-logo"></img>
+              </div>
               <h1>STEAM</h1>
             </div>
             <div className="accounts-title">

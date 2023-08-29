@@ -6,6 +6,10 @@ use tauri::Manager;
 
 
 
+// TRACK SIGNED ACCOUNTS 
+// #[tauri::command]
+// async fn create
+
 
 #[tauri::command]
 async fn close_accounts(window: tauri::Window) {
