@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar.jsx";
 import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
 import "./App.css";
+import "./SignIn.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -17,8 +18,21 @@ import CommunityPage from "./pages/CommunityPage.jsx";
 
 // image
 import steamLogo from "./assets/images/steamLogo.png";
+import signInBack from "./assets/images/signin_back.png";
+import steam_signin_logo from "./assets/images/steam_signin_logo.png";
+import qr from "./assets/images/qr-code.png";
 function App() {
   const [user, setUser] = useState(false);
+  const [signIn, setSignIn] = useState(false);
+  const [accountName, setAccountName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignInView = () => {
+    setSignIn(!signIn);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
   const createWindow = async () => {
     const homeView = new WebviewWindow("home", {
@@ -44,6 +58,7 @@ function App() {
     // invoke tauri to see if theres an existing user instead of local storage...
     if (localStorage.getItem("user")) {
       setUser(true);
+      createWindow();
     } else {
       setUser(false);
     }
@@ -51,7 +66,57 @@ function App() {
   return (
     <BrowserRouter>
       <div className="main-window">
-        {user ? (
+        {signIn ? (
+          <div className="accounts">
+            <div data-tauri-drag-region className="close-sign-in">
+              <p onClick={() => appWindow.close()}> X</p>
+            </div>
+            <div className="back-container">
+              <img onClick={handleSignInView} src={signInBack}></img>
+              <img src={steam_signin_logo} alt="singin-steam-logo"></img>
+            </div>
+            <div className="form-container">
+              <form className="sign-in-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label className="signin-label" htmlFor="accountName">
+                    SIGN IN WITH ACCOUNT NAME
+                  </label>
+                  <input
+                    type="text"
+                    id="accountName"
+                    value={accountName}
+                    onChange={(e) => setAccountName(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="signin-label-password" htmlFor="password">
+                    PASSWORD
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <button type="submit">Sign In</button>
+                </div>
+              </form>
+              <div className="qr">
+                <img src={qr} alt="steam-qr"></img>
+                <p>This doesnt work just here to look the same</p>
+              </div>
+            </div>
+            <div className="register-signin">
+              <p>Help, I can't sign in</p>
+              <p>
+                Don't have a steam account? <span>Create a Free Account </span>
+              </p>
+            </div>
+          </div>
+        ) : user ? (
           <div>
             <div data-tauri-drag-region className="help-bar">
               <div data-tauri-drag-region className="left">
@@ -109,7 +174,7 @@ function App() {
               <h2 data-tauri-drag-region>Who's playing?</h2>{" "}
             </div>
             <div className="accounts-pick">
-              <h3>+</h3>
+              <h3 onClick={handleSignInView}>+</h3>
             </div>
             <button onClick={createWindow}>Create</button>
           </div>

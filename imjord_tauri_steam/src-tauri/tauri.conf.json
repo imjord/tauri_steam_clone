@@ -51,8 +51,8 @@
         "resizable": true,
         "titleBarStyle": "Transparent",
         "hiddenTitle": true,
-        "width": 900,
-        "height": 800,
+        "width": 700,
+        "height": 440,
         "decorations": false
       }
     ]
