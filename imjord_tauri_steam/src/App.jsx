@@ -27,6 +27,31 @@ function App() {
   const [accountName, setAccountName] = useState("");
   const [password, setPassword] = useState("");
 
+  // start of chatgpt crap to get that slow effect
+  const [animationPaused, setAnimationPaused] = useState(false);
+  useEffect(() => {
+    const introElement = document.querySelector(".steam-intro");
+    introElement.addEventListener(
+      "animationiteration",
+      handleAnimationIteration
+    );
+
+    return () => {
+      introElement.removeEventListener(
+        "animationiteration",
+        handleAnimationIteration
+      );
+    };
+  }, []);
+
+  const handleAnimationIteration = () => {
+    setAnimationPaused(true);
+    setTimeout(() => {
+      setAnimationPaused(false);
+    }, 0);
+  };
+  // end of chatgpt crap
+
   const handleSignInView = () => {
     setSignIn(!signIn);
   };
@@ -156,7 +181,7 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className="accounts">
+          <div className="steam-intro">
             <div data-tauri-drag-region className="accounts-header">
               <div>
                 <p onClick={() => appWindow.close()} className="close-account">
@@ -164,19 +189,27 @@ function App() {
                 </p>
               </div>
             </div>
+            <div
+              className={`steam-intro-background ${
+                animationPaused ? "paused" : ""
+              }`}
+            ></div>
             <div className="accounts-logo">
               <div className="steam-logo">
                 <img src={steamLogo} alt="steam-logo" id="steam-logo"></img>
               </div>
-              <h1>STEAM</h1>
+              <h1 className="steam-title">STEAM</h1>
             </div>
-            <div className="accounts-title">
-              <h2 data-tauri-drag-region>Who's playing?</h2>{" "}
+            <div className="accounts-info">
+              <div className="accounts-title">
+                <h2>Who's playing?</h2>{" "}
+              </div>
+              <div className="accounts-add">
+                <h3 onClick={handleSignInView}>+</h3>
+              </div>
             </div>
-            <div className="accounts-pick">
-              <h3 onClick={handleSignInView}>+</h3>
-            </div>
-            <button onClick={createWindow}>Create</button>
+
+            {/* <button onClick={createWindow}>Create</button> */}
           </div>
         )}
         <Routes>

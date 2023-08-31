@@ -7,13 +7,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.steam-logo {
-  font-size: 10px;
-  color: white;
-  border-radius: 15px;
-  border: 2px solid red;
-}
-
 .help-bar {
   position: absolute;
   top: 0;
@@ -102,7 +95,43 @@ html {
 .icon {
   color: rgb(255, 255, 255);
 }
-/* accounts */
+.steam-intro {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(58, 84, 113, 0.25);
+}
+
+.steam-intro-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-image: url("./assets/images/intro_image01.png");
+  background-size: cover;
+  filter: blur(3.5px);
+  animation: moveLoop 70s linear infinite;
+  z-index: -1;
+}
+
+.steam-intro-background.paused {
+  animation-play-state: paused;
+}
+
+@keyframes moveLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#steam-logo {
+  opacity: 0.9;
+}
 
 .accounts {
   display: flex;
@@ -112,6 +141,7 @@ html {
   width: 100%;
   flex-direction: column;
 }
+
 .accounts-header {
   display: flex;
   position: absolute;
@@ -122,8 +152,14 @@ html {
 }
 .accounts-logo {
   display: flex;
-  padding: 50px;
-  margin-top: 50px;
+  align-items: center;
+  margin: 50px;
+}
+
+.steam-title {
+  margin: 10px;
+  letter-spacing: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .accounts-title {
@@ -131,7 +167,42 @@ html {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin-top: 130px;
+  margin-top: 25px;
+}
+
+.accounts-title h2 {
+  font-size: 26px;
+  color: rgb(218, 215, 215);
+}
+
+.accounts-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.accounts-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.accounts-add h3 {
+  font-size: 100px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out; /* Adding a smooth transition effect */
+}
+.accounts-add h3:hover {
+  cursor: pointer;
+  border: 2px solid white;
+  transform: translateY(-10px); /* Move the element up by 10px on hover */
+}
+.close-account {
+  background-color: transparent;
+  opacity: 0.4;
 }
 
 .close-account:hover {
