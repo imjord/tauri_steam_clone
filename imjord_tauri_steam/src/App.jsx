@@ -4,7 +4,7 @@ import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
 import "./App.css";
 import "./SignIn.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import {
   faWindowMaximize,
   faBullhorn,
@@ -15,6 +15,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CommunityPage from "./pages/CommunityPage.jsx";
+import Register from "./pages/Register.jsx";
 
 // image
 import steamLogo from "./assets/images/steamLogo.png";
@@ -26,6 +27,11 @@ function App() {
   const [signIn, setSignIn] = useState(false);
   const [accountName, setAccountName] = useState("");
   const [password, setPassword] = useState("");
+  const [registerPage, setRegisterPage] = useState(false);
+
+  const handleRegisterPage = () => {
+    setRegisterPage(!registerPage);
+  };
 
   // start of chatgpt crap to get that slow effect
   const [animationPaused, setAnimationPaused] = useState(false);
@@ -91,7 +97,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="main-window">
-        {signIn ? (
+        {registerPage ? (
+          <div className="accounts">
+            <Register />
+          </div>
+        ) : signIn ? (
           <div className="accounts">
             <div data-tauri-drag-region className="close-sign-in">
               <p onClick={() => appWindow.close()}> X</p>
@@ -137,7 +147,8 @@ function App() {
             <div className="register-signin">
               <p>Help, I can't sign in</p>
               <p>
-                Don't have a steam account? <span>Create a Free Account </span>
+                Don't have a steam account?{" "}
+                <span onClick={handleRegisterPage}>Create a Free Account </span>
               </p>
             </div>
           </div>
