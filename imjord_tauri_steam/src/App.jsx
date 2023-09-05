@@ -99,7 +99,7 @@ function App() {
       <div className="main-window">
         {registerPage ? (
           <div className="accounts">
-            <Register />
+            <Register createWindow={createWindow} />
           </div>
         ) : signIn ? (
           <div className="accounts">

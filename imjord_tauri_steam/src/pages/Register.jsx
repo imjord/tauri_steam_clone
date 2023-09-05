@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
 
-const Register = () => {
+const Register = (props) => {
+  const { createWindow } = props;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -20,6 +22,7 @@ const Register = () => {
       setUsername("");
       setPassword("");
       setEmail("");
+      createWindow();
     } catch (err) {
       console.error(err);
       setErrorMsg("Registration failed. Please try again.");
