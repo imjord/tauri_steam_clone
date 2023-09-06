@@ -30,7 +30,8 @@ function App() {
   const [registerPage, setRegisterPage] = useState(false);
 
   const handleRegisterPage = () => {
-    setRegisterPage(!registerPage);
+    setRegisterPage(true);
+    signIn(false);
   };
 
   // start of chatgpt crap to get that slow effect
@@ -65,6 +66,7 @@ function App() {
     event.preventDefault();
   };
 
+  // MAIN STEAM WINDOW
   const createWindow = async () => {
     const homeView = new WebviewWindow("home", {
       url: "/",
@@ -84,6 +86,25 @@ function App() {
       console.log(e);
     });
   };
+  // REGISTER WINDOW POP UP
+  const createRegisterWindow = () => {
+    const registerView = new WebviewWindow("register", {
+      url: "/",
+      height: 1100,
+      width: 1800,
+      decorations: false,
+      fullscreen: false,
+      resizable: false,
+      titleBarStyle: "transparent",
+      hiddenTitle: true,
+    });
+    registerView.once("tauri://created", function () {
+      localStorage.setItem("register", true);
+    });
+    registerView.once("tauri://error", function (e) {
+      console.log(e);
+    });
+  };
 
   useEffect(() => {
     // invoke tauri to see if theres an existing user instead of local storage...
@@ -93,14 +114,18 @@ function App() {
     } else {
       setUser(false);
     }
+    if (localStorage.getItem("register")) {
+      setRegisterPage(true);
+      localStorage.removeItem("register");
+    } else {
+      setRegisterPage(false);
+    }
   }, []);
   return (
     <BrowserRouter>
       <div className="main-window">
         {registerPage ? (
-          <div className="accounts">
-            <Register createWindow={createWindow} />
-          </div>
+          <Register />
         ) : signIn ? (
           <div className="accounts">
             <div data-tauri-drag-region className="close-sign-in">
@@ -147,8 +172,10 @@ function App() {
             <div className="register-signin">
               <p>Help, I can't sign in</p>
               <p>
-                Don't have a steam account?{" "}
-                <span onClick={handleRegisterPage}>Create a Free Account </span>
+                Don't have a steam account?
+                <span id="create-acc-span" onClick={createRegisterWindow}>
+                  Create a Free Account
+                </span>
               </p>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
-
+import "./Register.css";
 const Register = (props) => {
   const { createWindow } = props;
   const [username, setUsername] = useState("");

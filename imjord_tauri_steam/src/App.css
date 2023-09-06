@@ -227,6 +227,14 @@ html {
   width: 10%;
 }
 
+#create-acc-span {
+  margin-left: 5px;
+}
+
+#create-acc-span:hover {
+  cursor: pointer;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
