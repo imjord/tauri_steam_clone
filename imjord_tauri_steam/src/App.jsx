@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar.jsx";
-import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
+import { appWindow, getCurrent, WebviewWindow } from "@tauri-apps/api/window";
 import "./App.css";
 import "./SignIn.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -68,6 +68,8 @@ function App() {
 
   // MAIN STEAM WINDOW
   const createWindow = async () => {
+    let currentView = getCurrent();
+    console.log(currentView);
     const homeView = new WebviewWindow("home", {
       url: "/",
       height: 1100,
@@ -88,13 +90,16 @@ function App() {
   };
   // REGISTER WINDOW POP UP
   const createRegisterWindow = () => {
+    let currentView = getCurrent();
+    console.log(currentView);
     const registerView = new WebviewWindow("register", {
       url: "/",
-      height: 1100,
-      width: 1800,
+      height: 800,
+      width: 900,
       decorations: false,
       fullscreen: false,
       resizable: false,
+      center: false,
       titleBarStyle: "transparent",
       hiddenTitle: true,
     });
@@ -125,7 +130,7 @@ function App() {
     <BrowserRouter>
       <div className="main-window">
         {registerPage ? (
-          <Register />
+          <Register createWindow={createWindow} />
         ) : signIn ? (
           <div className="accounts">
             <div data-tauri-drag-region className="close-sign-in">

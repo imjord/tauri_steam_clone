@@ -11,6 +11,7 @@ const Register = (props) => {
   const [errorMsg, setErrorMsg] = useState("");
 
   const createUser = async (e) => {
+    const mainWindow = WebviewWindow.getByLabel("main");
     e.preventDefault();
     try {
       const newUser = await axios.post("http://localhost:3001/api/users", {
@@ -22,6 +23,7 @@ const Register = (props) => {
       setUsername("");
       setPassword("");
       setEmail("");
+      mainWindow.close();
       createWindow();
     } catch (err) {
       console.error(err);
@@ -35,12 +37,10 @@ const Register = (props) => {
         <p onClick={() => appWindow.close()}> X</p>
       </div>
       <div className="account-creation">
-        <div className="creation-msg">
-          {successMsg}
-          {errorMsg}
-        </div>
+        {errorMsg ? <div className="creation-msg">{errorMsg}</div> : null}
+
         <div className="creation-title">
-          <h3>CREATE YOUR ACCOUNT</h3>
+          <p>CREATE YOUR ACCOUNT</p>
         </div>
         <div className="creation-form-container">
           <form onSubmit={createUser}>

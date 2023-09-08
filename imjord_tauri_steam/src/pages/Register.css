@@ -1,5 +1,50 @@
 .account-creation {
-  padding: 5px;
-  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: rgb(17, 23, 35);
   margin: 20px;
+}
+
+.creation-form-container {
+  width: 100%;
+}
+
+.creation-title {
+  padding: 50px;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  color: rgb(130, 136, 147);
+}
+
+.form-group input {
+  border-radius: 3px !important;
+  width: 90%;
+  background-color: rgb(38, 44, 57);
+}
+
+.creation-msg {
+  background-color: rgb(27, 27, 27);
+  width: 100%;
+  padding: 15px;
+  border: 2px solid rgb(243, 52, 23);
+  animation: color-flash 1s ease-in-out;
+}
+
+@keyframes color-flash {
+  from {
+    background-color: rgb(27, 27, 27);
+  }
+  to {
+    background-color: orangered;
+  }
 }
