@@ -1,5 +1,6 @@
 const User = require("../models/User");
-
+const passport = require("passport");
+// GET
 const getUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -10,7 +11,7 @@ const getUsers = async (req, res) => {
     return res.status(500).json({ message: "Error getting brobro." });
   }
 };
-
+// POST
 const createUser = async (req, res) => {
   let { email, password, username } = req.body;
   try {
@@ -27,4 +28,36 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, createUser };
+// LOGIN
+
+const loginUser = (req, res) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) {
+      console.log(err);
+    }
+    if (user) {
+      req.session.user = user.username;
+      //later func for user library
+      // req.session.library
+      return res.json({
+        message: "User is now logged in",
+        session: req.session,
+      });
+    }
+
+    return res.json({ message: "User not found" });
+  })(req, res, next);
+};
+
+// logout
+const logoutUser = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.clearCookie("session").send("logout complete");
+    }
+  });
+};
+
+module.exports = { getUsers, createUser, loginUser, logoutUser };

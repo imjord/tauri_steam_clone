@@ -68,8 +68,6 @@ function App() {
 
   // MAIN STEAM WINDOW
   const createWindow = async () => {
-    let currentView = getCurrent();
-    console.log(currentView);
     const homeView = new WebviewWindow("home", {
       url: "/",
       height: 1100,
@@ -90,8 +88,6 @@ function App() {
   };
   // REGISTER WINDOW POP UP
   const createRegisterWindow = () => {
-    let currentView = getCurrent();
-    console.log(currentView);
     const registerView = new WebviewWindow("register", {
       url: "/",
       height: 800,
@@ -110,7 +106,6 @@ function App() {
       console.log(e);
     });
   };
-
   useEffect(() => {
     // invoke tauri to see if theres an existing user instead of local storage...
     if (localStorage.getItem("user")) {
@@ -251,7 +246,6 @@ function App() {
                 <h3 onClick={handleSignInView}>+</h3>
               </div>
             </div>
-
             {/* <button onClick={createWindow}>Create</button> */}
           </div>
         )}
