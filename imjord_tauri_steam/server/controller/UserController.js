@@ -30,8 +30,8 @@ const createUser = async (req, res) => {
 
 // LOGIN
 
-const loginUser = (req, res) => {
-  passport.authenticate("local", (err, user, info) => {
+const loginUser = (req, res, next) => {
+  passport.authenticate("local", (err, user) => {
     if (err) {
       console.log(err);
     }
@@ -45,7 +45,10 @@ const loginUser = (req, res) => {
       });
     }
 
-    return res.json({ message: "User not found" });
+    return res.json({
+      message:
+        "Invalid Credentials, Please try again with correct username/password",
+    });
   })(req, res, next);
 };
 
