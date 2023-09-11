@@ -9,7 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ProfileHourCard from "../components/ProfileHourCard";
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
+  const { sessionUser } = props;
   return (
     <div className="profile-page">
       <div className="profile-background"></div>
@@ -22,8 +23,8 @@ const ProfilePage = () => {
             />
           </div>
           <div className="profile-bio">
-            <h1>mac</h1>
-            <p>mac</p>
+            <h1>{sessionUser.username}</h1>
+            <p>{sessionUser.username}</p>
           </div>
           <div className="profile-level">
             <div className="level">

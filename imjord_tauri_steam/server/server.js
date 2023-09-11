@@ -13,17 +13,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    // credentials: true,
+    origin: "http://localhost:1420",
+    credentials: true,
   })
 );
 app.use(
   session({
     secret: "secret",
     saveUninitialized: true,
-    resave: true,
+    resave: false,
     cookie: {
-      httpOnly: true,
       maxAge: 3600000,
     },
   })

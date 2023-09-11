@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.jsx";
 import { appWindow, getCurrent, WebviewWindow } from "@tauri-apps/api/window";
 import "./App.css";
 import "./SignIn.css";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import {
@@ -23,6 +24,7 @@ import signInBack from "./assets/images/signin_back.png";
 import steam_signin_logo from "./assets/images/steam_signin_logo.png";
 import qr from "./assets/images/qr-code.png";
 function App() {
+  const [sessionUser, setSessionUser] = useState({});
   const [user, setUser] = useState(false);
   const [signIn, setSignIn] = useState(false);
   const [accountName, setAccountName] = useState("");
@@ -34,7 +36,19 @@ function App() {
     signIn(false);
   };
 
-  // start of chatgpt crap to get that slow effect
+  const getSessionUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/api/user", {
+        withCredentials: true,
+      });
+      console.log(response);
+      setSessionUser(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  // start of chatgpt crap to get that slow effect on app intro
   const [animationPaused, setAnimationPaused] = useState(false);
   useEffect(() => {
     const introElement = document.querySelector(".steam-intro");
@@ -181,41 +195,11 @@ function App() {
           </div>
         ) : user ? (
           <div>
-            <div data-tauri-drag-region className="help-bar">
-              <div data-tauri-drag-region className="left">
-                <p>Steam</p>
-                <p>View</p>
-                <p>Friends</p>
-                <p>Games</p>
-                <p>Help</p>
-              </div>
-              <div data-tauri-drag-region className="right">
-                <p className="nav-icon">
-                  <FontAwesomeIcon className="icon" icon={faBullhorn} />
-                </p>
-                <p className="nav-icon">
-                  <FontAwesomeIcon className="icon" icon={faEnvelope} />
-                </p>
-                <p className="guest-box">
-                  <div>
-                    <FontAwesomeIcon icon={faUser} />
-                  </div>
-                  <div>
-                    <p>guest</p>
-                  </div>
-                </p>
-                <p onClick={() => appWindow.minimize()}>_</p>
-                <p>
-                  <FontAwesomeIcon
-                    onClick={() => appWindow.maximize()}
-                    icon={faWindowMaximize}
-                  />
-                </p>
-                <p onClick={() => appWindow.close()}>X</p>
-              </div>
-            </div>
             <div className="steam-nav">
-              <Navbar />
+              <Navbar
+                getSessionUser={getSessionUser}
+                sessionUser={sessionUser}
+              />
             </div>
           </div>
         ) : (
@@ -250,10 +234,21 @@ function App() {
           </div>
         )}
         <Routes>
-          <Route path="/home" element={<HomePage />} />
+          <Route
+            path="/home"
+            element={<HomePage getSessionUser={getSessionUser} />}
+          />
           <Route path="/library" element={<ProjectsPage />} />
           <Route path="/community" element={<CommunityPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route
+            path="/profile"
+            element={
+              <ProfilePage
+                getSessionUser={getSessionUser}
+                sessionUser={sessionUser}
+              />
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

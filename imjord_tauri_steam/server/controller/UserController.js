@@ -21,10 +21,25 @@ const createUser = async (req, res) => {
       username,
     });
     await newUser.save();
-    return res.status(200).json({ message: "user created!" });
+    req.session.user = newUser.username;
+    return res
+      .status(200)
+      .json({ message: "user created!", session: req.session });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: "Error creating bro" });
+  }
+};
+
+// get the current session user
+
+const getSessionUser = async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.session.user });
+    return res.status(200).json({ email: user.email, username: user.username });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: "Error getting the session user" });
   }
 };
 
@@ -63,4 +78,10 @@ const logoutUser = (req, res) => {
   });
 };
 
-module.exports = { getUsers, createUser, loginUser, logoutUser };
+module.exports = {
+  getUsers,
+  createUser,
+  loginUser,
+  logoutUser,
+  getSessionUser,
+};

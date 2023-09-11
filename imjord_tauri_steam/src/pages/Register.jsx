@@ -14,11 +14,18 @@ const Register = (props) => {
     const mainWindow = WebviewWindow.getByLabel("main");
     e.preventDefault();
     try {
-      const newUser = await axios.post("http://localhost:3001/api/users", {
-        username,
-        password,
-        email,
-      });
+      const newUser = await axios.post(
+        "http://localhost:3001/api/users",
+
+        {
+          username,
+          password,
+          email,
+        },
+        {
+          withCredentials: true,
+        }
+      );
       setSuccessMsg("Registration successful!");
       setUsername("");
       setPassword("");
