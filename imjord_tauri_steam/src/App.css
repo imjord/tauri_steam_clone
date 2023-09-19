@@ -24,7 +24,7 @@ html {
   cursor: default;
 }
 
-.right p:hover {
+#right-hover-box:hover {
   color: rgb(255, 255, 255);
   text-shadow: 0 0 10px rgb(255, 255, 255);
   cursor: default;
@@ -76,7 +76,10 @@ html {
 
 .guest-box:hover {
   background-color: rgb(61, 62, 63);
-  cursor: default;
+  cursor: pointer !important;
+}
+.guest-box-name:hover {
+  cursor: pointer !important;
 }
 
 .guest-box p {

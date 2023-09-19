@@ -21,7 +21,7 @@ const createUser = async (req, res) => {
       username,
     });
     await newUser.save();
-    req.session.user = newUser.username;
+    req.session.user = newUser;
     return res
       .status(200)
       .json({ message: "user created!", session: req.session });
@@ -35,8 +35,14 @@ const createUser = async (req, res) => {
 
 const getSessionUser = async (req, res) => {
   try {
-    const user = await User.findOne({ username: req.session.user });
-    return res.status(200).json({ email: user.email, username: user.username });
+    const userData = req.session.user;
+    if (userData) {
+      return res
+        .status(200)
+        .json({ email: userData.email, username: userData.username });
+    } else {
+      return res.status(401).json({ message: "No session user found" });
+    }
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: "Error getting the session user" });

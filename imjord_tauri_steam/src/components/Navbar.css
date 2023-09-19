@@ -36,6 +36,11 @@ nav ul #link.pending:hover {
   color: #b3b6b4;
 }
 
+/* dumb chatgpt hover stuff */
+/* 
+ */
+/*  */
+/*  */
 nav ul #link.active {
   color: rgb(74, 159, 199);
   position: relative; /* Ensure pseudo-element is positioned relative to this */
@@ -58,4 +63,55 @@ nav ul #link.active::before {
 /* On hover, expand the bar to the width of the link text */
 nav ul #link.active:hover::before {
   width: 100%;
+}
+
+/* styles for hover title */
+
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+[data-title]:after {
+  content: attr(data-title);
+  background-color: rgb(164, 161, 161);
+  color: white;
+  font-size: 150%;
+  position: absolute;
+  padding: 1px 5px 2px 5px;
+  bottom: -2em;
+  left: 10%;
+  border: none;
+  outline: none;
+
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 99999;
+  visibility: hidden;
+}
+[data-title] {
+  position: relative;
+}
+
+/* user drop down */
+.manage-user-dropdown {
+  background-color: rgba(58, 84, 113);
+  position: absolute;
+  top: 35px;
+  padding: 5px 5px 5px 5px;
+  z-index: 500;
+  right: 10px;
+}
+
+.manage-user-dropdown p {
+  color: white !important;
+}
+.manage-user-dropdown p:hover {
+  cursor: pointer;
+  color: black !important;
+}
+
+.manage-user-dropdown div:hover {
+  color: black !important;
+  background-color: white;
 }

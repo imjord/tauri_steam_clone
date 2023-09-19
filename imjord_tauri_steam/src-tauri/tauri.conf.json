@@ -48,6 +48,7 @@
     "windows": [
       {
         "fullscreen": false,
+        "label": "main",
         "resizable": true,
         "titleBarStyle": "Transparent",
         "hiddenTitle": true,
