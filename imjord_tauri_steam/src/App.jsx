@@ -33,6 +33,26 @@ function App() {
   const [password, setPassword] = useState("");
   const [registerPage, setRegisterPage] = useState(false);
 
+  // login
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/api/users/login",
+        {
+          username: accountName,
+          password: password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      console.log(response);
+      createWindow();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleRegisterPage = () => {
     setRegisterPage(true);
     signIn(false);
@@ -186,7 +206,9 @@ function App() {
                 </div>
 
                 <div className="form-group">
-                  <button type="submit">Sign In</button>
+                  <button type="submit" onClick={() => handleLogin()}>
+                    Sign In
+                  </button>
                 </div>
               </form>
               <div className="qr">
@@ -210,6 +232,7 @@ function App() {
               <Navbar
                 getSessionUser={getSessionUser}
                 sessionUser={sessionUser}
+                relaunchApp={relaunchApp}
               />
             </div>
           </div>

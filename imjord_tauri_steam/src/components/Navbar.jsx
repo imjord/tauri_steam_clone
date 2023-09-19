@@ -11,10 +11,24 @@ import {
   faEnvelope,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 function Navbar(props) {
-  const { getSessionUser, sessionUser } = props;
+  const { getSessionUser, sessionUser, relaunchApp } = props;
   const [active, setActive] = useState(false);
   const [userDropDown, setUserDropDown] = useState(false);
+
+  const logout = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/api/logout");
+      console.log(response);
+      localStorage.removeItem("user");
+      relaunchApp();
+    } catch (err) {
+      //error
+      console.error(err);
+    }
+  };
+
   const handleUserDropDown = () => {
     setUserDropDown(!userDropDown);
   };
@@ -24,7 +38,7 @@ function Navbar(props) {
   };
   useEffect(() => {
     getSessionUser();
-  });
+  }, []);
   return (
     <div>
       <div data-tauri-drag-region className="help-bar">
@@ -74,7 +88,7 @@ function Navbar(props) {
                 <p>Change account</p>
               </div>
               <div>
-                <p>Sign out</p>
+                <p onClick={() => logout()}>Sign out</p>
               </div>
             </div>
           ) : null}

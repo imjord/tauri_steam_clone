@@ -57,7 +57,7 @@ const loginUser = (req, res, next) => {
       console.log(err);
     }
     if (user) {
-      req.session.user = user.username;
+      req.session.user = user;
       //later func for user library
       // req.session.library
       return res.json({
