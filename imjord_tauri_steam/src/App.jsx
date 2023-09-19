@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar.jsx";
 import { appWindow, getCurrent, WebviewWindow } from "@tauri-apps/api/window";
+import { relaunch, exit } from "@tauri-apps/api/process";
 
 import "./App.css";
 import "./SignIn.css";
@@ -121,6 +122,13 @@ function App() {
       console.log(e);
     });
   };
+  // relaunch app
+  const relaunchApp = async () => {
+    const homeWindow = WebviewWindow.getByLabel("home");
+    if (homeWindow) {
+      await relaunch();
+    }
+  };
   useEffect(() => {
     // invoke tauri to see if theres an existing user instead of local storage...
     if (localStorage.getItem("user")) {
@@ -128,18 +136,8 @@ function App() {
       createWindow();
     } else {
       // Close the home window where the main functions are. then open the mainWindow again
-      const homeWindow = WebviewWindow.getByLabel("home");
-      if (homeWindow) {
-        homeWindow.close();
-      }
-      const webview = new WebviewWindow("main");
 
-      webview.once("tauri://created", function () {
-        // webview window successfully created
-      });
-      webview.once("tauri://error", function (e) {
-        // an error happened creating the webview window
-      });
+      relaunchApp();
     }
     if (localStorage.getItem("register")) {
       setRegisterPage(true);
