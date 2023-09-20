@@ -9,6 +9,8 @@ require("./utils/passport")(passport);
 const session = require("express-session");
 const routes = require("./routes/index");
 const MongoStore = require("connect-mongo");
+require("dotenv").config();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -21,7 +23,7 @@ app.use(
 // session store db
 
 const options = {
-  mongoUrl: "mongodb://127.0.0.1:27017/imjord_tauri_steam",
+  mongoUrl: process.env.MONGO_URI,
 };
 
 const store = MongoStore.create(options);

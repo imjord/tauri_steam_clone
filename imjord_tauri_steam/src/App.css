@@ -7,6 +7,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.main-window {
+  background-color: #1b2838;
+}
+
 .help-bar {
   position: absolute;
   top: 0;

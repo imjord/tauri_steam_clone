@@ -23,15 +23,36 @@
 .search-bar {
   display: flex;
   width: 22%;
+  font-size: 15px;
 }
 
 .search-bar input {
   background-color: rgb(52, 74, 97);
   border-radius: 5px;
+  font-style: italic;
+}
+
+.search-bar input:hover {
+  border: 0.5px solid rgba(0, 255, 255, 0.326);
 }
 .bar-title {
   margin: 8px;
   padding-left: 8px;
   font-size: 13px;
   color: rgb(184, 182, 182);
+}
+
+.bar-title:hover {
+  cursor: pointer;
+  background-color: aqua;
+}
+
+#search-icon {
+  position: relative;
+  left: -30px;
+  top: 5px;
+  color: black;
+  background-color: rgb(0, 140, 255);
+  padding: 6px;
+  border-radius: 2px;
 }

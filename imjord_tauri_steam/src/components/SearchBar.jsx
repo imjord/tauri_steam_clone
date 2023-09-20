@@ -1,6 +1,7 @@
 import React from "react";
 import "./SearchBar.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 const SearchBar = () => {
   return (
     <div className="bar-container">
@@ -28,6 +29,7 @@ const SearchBar = () => {
 
         <div className="search-bar">
           <input type="text" placeholder="search" />
+          <FontAwesomeIcon id="search-icon" icon={faMagnifyingGlass} />
         </div>
       </div>
     </div>

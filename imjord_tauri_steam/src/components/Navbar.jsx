@@ -50,17 +50,17 @@ function Navbar(props) {
           <p>Help</p>
         </div>
         <div data-tauri-drag-region className="right">
-          <p className="nav-icon" data-title="View news from steam">
+          <p className="nav-icon" title="View news from steam">
             <FontAwesomeIcon className="icon" icon={faBullhorn} />
           </p>
-          <p data-title="View Notifications" className="nav-icon">
+          <p title="View Notifications" className="nav-icon">
             <FontAwesomeIcon className="icon" icon={faEnvelope} />
           </p>
           <p className="guest-box" onClick={() => handleUserDropDown()}>
             <div>
               <FontAwesomeIcon icon={faUser} />
             </div>
-            <div data-title="Manage Account" className="guest-box-name">
+            <div title="Manage Account" className="guest-box-name">
               <p>{sessionUser.username}</p>
             </div>
           </p>
@@ -148,7 +148,7 @@ function Navbar(props) {
             to="/profile"
           >
             {" "}
-            <li>PROFILE</li>{" "}
+            <li>{sessionUser.username}</li>{" "}
           </NavLink>
         </ul>
       </nav>

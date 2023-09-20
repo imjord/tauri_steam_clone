@@ -67,32 +67,6 @@ nav ul #link.active:hover::before {
 
 /* styles for hover title */
 
-[data-title]:hover:after {
-  opacity: 1;
-  transition: all 0.1s ease 0.5s;
-  visibility: visible;
-}
-[data-title]:after {
-  content: attr(data-title);
-  background-color: rgb(164, 161, 161);
-  color: white;
-  font-size: 150%;
-  position: absolute;
-  padding: 1px 5px 2px 5px;
-  bottom: -2em;
-  left: 10%;
-  border: none;
-  outline: none;
-
-  white-space: nowrap;
-  opacity: 0;
-  z-index: 99999;
-  visibility: hidden;
-}
-[data-title] {
-  position: relative;
-}
-
 /* user drop down */
 .manage-user-dropdown {
   background-color: rgba(58, 84, 113);
