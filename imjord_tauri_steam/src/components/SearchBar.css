@@ -1,0 +1,37 @@
+.bar-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  background-color: rgb(0, 102, 255);
+}
+
+.bar-links {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  width: 22%;
+}
+
+.search-bar input {
+  background-color: rgb(52, 74, 97);
+  border-radius: 5px;
+}
+.bar-title {
+  margin: 8px;
+  padding-left: 8px;
+  font-size: 13px;
+  color: rgb(184, 182, 182);
+}

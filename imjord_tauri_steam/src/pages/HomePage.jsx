@@ -1,5 +1,6 @@
 // HomePage.js
 import React, { useState, useEffect } from "react";
+import SearchBar from "../components/SearchBar";
 
 import "./HomePage.css";
 function HomePage(props) {
@@ -7,7 +8,11 @@ function HomePage(props) {
   useEffect(() => {
     getSessionUser();
   });
-  return <div className="home-page">Store Page</div>;
+  return (
+    <div className="home-page">
+      <SearchBar />
+    </div>
+  );
 }
 
 export default HomePage;
