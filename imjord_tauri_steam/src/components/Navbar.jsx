@@ -40,7 +40,7 @@ function Navbar(props) {
     getSessionUser();
   }, []);
   return (
-    <div>
+    <div className="nav">
       <div data-tauri-drag-region className="help-bar">
         <div data-tauri-drag-region className="left">
           <p>Steam</p>
@@ -148,7 +148,7 @@ function Navbar(props) {
             to="/profile"
           >
             {" "}
-            <li>{sessionUser.username}</li>{" "}
+            <li>{sessionUser?.username?.toUpperCase()}</li>{" "}
           </NavLink>
         </ul>
       </nav>

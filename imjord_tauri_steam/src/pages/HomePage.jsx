@@ -4,6 +4,9 @@ import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer";
 import "./HomePage.css";
 import GameBar from "../components/GameBar";
+import StoreSideBar from "../components/StoreSideBar";
+import StoreCarousel from "../components/StoreCarousel";
+import StoreLandingImage from "../components/StoreLandingImage";
 function HomePage(props) {
   const { getSessionUser } = props;
   useEffect(() => {
@@ -13,6 +16,18 @@ function HomePage(props) {
     <div className="home-page">
       <SearchBar />
       {/* <Footer /> */}
+      <div className="landing">
+        <StoreLandingImage />
+      </div>
+
+      <div className="store-main">
+        <div className="store-grid1">
+          <StoreSideBar />
+        </div>
+        <div className="store-grid">
+          <StoreCarousel />
+        </div>
+      </div>
       <GameBar />
     </div>
   );

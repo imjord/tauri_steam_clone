@@ -1,3 +1,10 @@
+.nav {
+  position: fixed;
+  top: 0;
+  z-index: 1030;
+  width: 100%;
+}
+
 nav {
   display: flex;
   background-color: #171a21;

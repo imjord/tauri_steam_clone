@@ -1,6 +1,8 @@
 .bar-container {
-  margin-top: 50px;
+  z-index: 0;
+  position: absolute;
   display: flex;
+  margin-top: 20px;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -11,19 +13,20 @@
   justify-content: space-between;
   align-items: center;
   width: 60%;
+  height: 35px;
   background-color: rgb(0, 102, 255);
 }
 
 .bar-links {
   display: flex;
-  width: 60%;
+  width: 55%;
   justify-content: center;
 }
 
 .search-bar {
   display: flex;
-  width: 22%;
-  font-size: 15px;
+  width: 16%;
+  font-size: 12px;
 }
 
 .search-bar input {
@@ -38,7 +41,7 @@
 .bar-title {
   margin: 8px;
   padding-left: 8px;
-  font-size: 13px;
+  font-size: 12px;
   color: rgb(184, 182, 182);
 }
 

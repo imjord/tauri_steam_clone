@@ -1,0 +1,16 @@
+.landing-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  margin-bottom: 20px;
+}
+
+.landing-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

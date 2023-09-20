@@ -1,4 +1,22 @@
 .home-page {
   background-color: #1b2838;
   height: 100vh;
+  margin-top: 70px;
+}
+
+.store-main {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 8fr;
+  grid-gap: 50px;
+}
+
+.store-grid1 {
+  grid-column: 1 / 1;
+  grid-row: 1 / 8;
+}
+
+.store-grid {
+  grid-column: 1/ 3;
+  grid-row: 1/ 8;
 }

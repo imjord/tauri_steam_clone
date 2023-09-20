@@ -7,10 +7,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.main-window {
-  background-color: #1b2838;
-}
-
 .help-bar {
   position: absolute;
   top: 0;
@@ -116,7 +112,7 @@ html {
   left: 0;
   width: 200%;
   height: 100%;
-  background-image: url("./assets/images/intro_image01.png");
+  background-image: url("./assets/images/intro_image01.png") !important;
   background-size: cover;
   filter: blur(3.5px);
   animation: moveLoop 70s linear infinite;
