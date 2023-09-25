@@ -7,6 +7,7 @@ import GameBar from "../components/GameBar";
 import StoreSideBar from "../components/StoreSideBar";
 import StoreCarousel from "../components/StoreCarousel";
 import StoreLandingImage from "../components/StoreLandingImage";
+import SpecialOffers from "../components/SpecialOffers";
 function HomePage(props) {
   const { getSessionUser } = props;
   useEffect(() => {
@@ -20,6 +21,8 @@ function HomePage(props) {
         <StoreLandingImage />
       </div>
       <StoreCarousel />
+      {/* <hr className="hr" /> */}
+      <SpecialOffers />
 
       <GameBar />
     </div>

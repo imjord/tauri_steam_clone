@@ -41,8 +41,17 @@ const StoreCarousel = () => {
                 <div className="center-info-avai">
                   <p>Now Available</p>
                 </div>
-                <div className="tags"> </div>
-                <div> </div>
+                <div className="tags">
+                  <ul>
+                    <li>RPG</li>
+                    <li>Zombie</li>
+                    <li>Zombie</li>
+                    <li>Zombie</li>
+                  </ul>
+                </div>
+                <div className="price">
+                  <p>$59.99</p>{" "}
+                </div>
               </div>
             </div>
           </div>
