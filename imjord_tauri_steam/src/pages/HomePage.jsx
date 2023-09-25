@@ -11,7 +11,7 @@ function HomePage(props) {
   const { getSessionUser } = props;
   useEffect(() => {
     getSessionUser();
-  });
+  }, []);
   return (
     <div className="home-page">
       <SearchBar />
@@ -19,15 +19,8 @@ function HomePage(props) {
       <div className="landing">
         <StoreLandingImage />
       </div>
+      <StoreCarousel />
 
-      <div className="store-main">
-        <div className="store-grid1">
-          <StoreSideBar />
-        </div>
-        <div className="store-grid">
-          <StoreCarousel />
-        </div>
-      </div>
       <GameBar />
     </div>
   );

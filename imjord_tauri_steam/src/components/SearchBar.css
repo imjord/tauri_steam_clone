@@ -14,7 +14,13 @@
   align-items: center;
   width: 60%;
   height: 35px;
-  background-color: rgb(0, 102, 255);
+  background: linear-gradient(
+    to left,
+    #2a407b,
+    #2a407b 50%,
+    #5186a4 75%,
+    #5186a4 75%
+  );
 }
 
 .bar-links {
@@ -30,7 +36,8 @@
 }
 
 .search-bar input {
-  background-color: rgb(52, 74, 97);
+  background-color: #5186a47e;
+  color: white;
   border-radius: 5px;
   font-style: italic;
 }
@@ -47,15 +54,20 @@
 
 .bar-title:hover {
   cursor: pointer;
-  background-color: aqua;
+  background-color: #5186a4;
+  opacity: 0.7;
 }
 
 #search-icon {
   position: relative;
-  left: -30px;
-  top: 5px;
-  color: black;
-  background-color: rgb(0, 140, 255);
-  padding: 6px;
+  left: -28px;
+  top: 2px;
+  color: rgb(69, 69, 69);
+  background-color: #5186a4;
+  padding: 8px;
   border-radius: 2px;
+}
+
+::placeholder {
+  color: black;
 }

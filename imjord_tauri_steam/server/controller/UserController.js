@@ -36,6 +36,7 @@ const createUser = async (req, res) => {
 const getSessionUser = async (req, res) => {
   try {
     const userData = req.session.user;
+    console.log(userData);
     if (userData) {
       return res
         .status(200)
