@@ -105,7 +105,7 @@ function App() {
   // MAIN STEAM WINDOW
   const createWindow = async () => {
     const homeView = new WebviewWindow("home", {
-      url: "/",
+      url: "/home",
       height: 1100,
       width: 1800,
       decorations: false,
