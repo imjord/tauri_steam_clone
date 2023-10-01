@@ -11,6 +11,7 @@ import SpecialOffers from "../components/SpecialOffers";
 import SteamDeckBar from "../components/SteamDeckBar";
 import BrowseCategory from "../components/BrowseCategory";
 import DiscoveryQue from "../components/DiscoveryQue";
+import GameListings from "../components/GameListings";
 function HomePage(props) {
   const { getSessionUser } = props;
   useEffect(() => {
@@ -29,6 +30,7 @@ function HomePage(props) {
       <SteamDeckBar />
       <BrowseCategory />
       <DiscoveryQue />
+      <GameListings />
       <GameBar />
     </div>
   );

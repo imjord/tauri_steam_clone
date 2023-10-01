@@ -11,3 +11,35 @@
   color: rgb(128, 136, 159);
   text-align: center;
 }
+
+#add-game-icon {
+  background-color: gray;
+  color: black;
+  padding: 0.2px;
+  margin-right: 5px;
+}
+
+.game-bar div {
+  display: flex;
+}
+
+.game-bar p {
+  font-size: 14px;
+}
+.game-bar div:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+
+.game-bar div:nth-child(2) p {
+  margin-left: 5px;
+}
+
+.game-bar div:nth-child(3) p {
+  margin-right: 5px;
+}
+
+.game-bar div:hover {
+  color: white;
+  cursor: pointer;
+}

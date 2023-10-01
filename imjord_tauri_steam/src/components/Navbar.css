@@ -76,20 +76,31 @@ nav ul #link.active:hover::before {
 
 /* user drop down */
 .manage-user-dropdown {
-  background-color: rgba(58, 84, 113);
+  background-color: rgb(58, 73, 90);
   position: absolute;
   top: 35px;
-  padding: 5px 5px 5px 5px;
+  padding: 1px;
   z-index: 500;
+  width: 190px;
   right: 10px;
 }
 
 .manage-user-dropdown p {
   color: white !important;
+  font-size: 15px !important;
+  padding: 5px;
 }
 .manage-user-dropdown p:hover {
   cursor: pointer;
   color: black !important;
+}
+
+#dd-profile {
+  color: white;
+}
+
+#dd-profile:hover {
+  color: black;
 }
 
 .manage-user-dropdown div:hover {

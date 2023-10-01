@@ -74,14 +74,18 @@ function Navbar(props) {
             <div className="manage-user-dropdown">
               <div>
                 <p>
-                  <Link to="/profile" onClick={() => handleUserDropDown()}>
+                  <Link
+                    id="dd-profile"
+                    to="/profile"
+                    onClick={() => handleUserDropDown()}
+                  >
                     {" "}
                     View my account
                   </Link>
                 </p>
               </div>
               <div>
-                <p>ACcount details: {sessionUser.email}</p>
+                <p>Account details: {sessionUser.email}</p>
               </div>
               <div>
                 <p>Store Prefecense</p>
@@ -89,12 +93,12 @@ function Navbar(props) {
               <div>
                 <p>View My wallet</p>
               </div>
-              <hr />
+              <hr className="hrboi" />
               <div>
-                <p>Change account</p>
+                <p>Change account...</p>
               </div>
               <div>
-                <p onClick={() => logout()}>Sign out</p>
+                <p onClick={() => logout()}>Sign out...</p>
               </div>
             </div>
           ) : null}

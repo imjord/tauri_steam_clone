@@ -10,15 +10,15 @@ const GameBar = () => {
   return (
     <div data-tauri-drag-region className="game-bar">
       <div>
-        <FontAwesomeIcon icon={faPlus} />
-        Add a Game
+        <FontAwesomeIcon id="add-game-icon" icon={faPlus} />
+        <p>Add a Game</p>
       </div>
       <div>
         {" "}
-        <FontAwesomeIcon icon={faDownload} /> Manage Downloads
+        <FontAwesomeIcon icon={faDownload} /> <p>Manage Downloads</p>
       </div>
       <div>
-        Friends & Chat <FontAwesomeIcon icon={faUserGroup} />
+        <p>Friends & Chat</p> <FontAwesomeIcon icon={faUserGroup} />
       </div>
     </div>
   );

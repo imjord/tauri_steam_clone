@@ -1,0 +1,227 @@
+.game-listing {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1b2838;
+  height: 90vh;
+}
+
+.game-listing-title-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-listing-title {
+  display: flex;
+  width: 50%;
+}
+
+.game-listing-title p {
+  margin-left: 15px;
+  color: #3994bc;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+.game-listing-title p:hover {
+  color: white;
+  background-color: #2a475e;
+  cursor: pointer;
+}
+.game-listing-cards {
+  background-color: #2a475e;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+#hawt {
+  background-color: #2a475e;
+  color: white;
+}
+.game-listing-cards-box {
+  display: flex;
+
+  justify-content: center;
+  width: 60%;
+}
+
+.game-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.cards {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 9%;
+  margin-top: 5px;
+  background-color: rgba(27, 40, 56, 0.3); /* Use RGBA to specify opacity */
+}
+
+.cards-img {
+  height: 100%;
+}
+
+.game-cards-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.game-cards-title p {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.game-cards-title span {
+  border: 1px solid gray;
+  padding: 1px 10px;
+  font-size: 14px;
+}
+
+.game-cards-title span:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.game-cards-images-details {
+  display: flex;
+  width: 30%;
+}
+
+.cards-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  background-color: #9bc1d7;
+}
+
+.card-details-p {
+  color: black;
+}
+
+.card-details-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 5px;
+  padding: 2px;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+}
+
+.card-details-tags {
+  color: gray;
+  font-size: 12px;
+}
+
+.card-details-price {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  justify-content: space-between;
+}
+
+.card-details-price div:nth-child(1) {
+  background-color: #4c6b22;
+  color: #beee16;
+  padding: 3px 5px;
+}
+
+.card-details-price div:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.card-details-price div:nth-child(2) p {
+  color: black;
+  margin-right: 15px;
+}
+
+.cards-details:hover {
+  cursor: pointer;
+}
+
+.cards-details:hover .card-details-price div:nth-child(2) p {
+  color: black;
+}
+
+#windows-logo {
+  height: 17px;
+}
+
+.game-cards-images-details {
+  display: flex;
+  align-items: center;
+  background-color: #9bc1d7;
+  flex-direction: column;
+}
+
+.game-cards-images-title p {
+  font-size: 25px;
+  margin-top: 15px;
+  color: #000;
+  width: 100%;
+}
+
+.card-reviews {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #4d5f6f;
+  width: 70%;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 2px;
+}
+
+.card-reviews p {
+  font-size: 12px;
+  margin-left: 5px;
+}
+.card-reviews p:nth-child(2) {
+  color: #63a5b0;
+}
+
+.card-reviews p:nth-child(2) span {
+  color: white;
+}
+
+.card-image-tags {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.card-image-tags p {
+  font-size: 12px;
+  margin-left: 6px;
+  padding: 1px 5px;
+  background-color: #4d5f6f;
+}
+
+.card-image-screenshot {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.card-image-screenshot img {
+  margin-top: 5px;
+}
