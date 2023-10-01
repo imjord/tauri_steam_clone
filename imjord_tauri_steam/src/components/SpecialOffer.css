@@ -1,9 +1,132 @@
 .special {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  border: 2px solid red;
-  height: 500px;
+  height: 50vh;
   background-color: #1b2838;
+}
+
+.angle-left-s {
+  display: flex;
+  justify-content: flex-end;
+  width: 20%;
+}
+
+.angle-left-r {
+  width: 20%;
+}
+
+.special .special-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+}
+
+.special-center img {
+  cursor: pointer;
+}
+
+.special-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.special-title-left p {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.special-title-right {
+  border: 1px solid gray;
+  padding: 0 10px;
+}
+
+.special-title-right:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.special-title-right p {
+  font-size: 12px;
+}
+
+.special-content {
+  display: grid;
+  margin-top: 15px;
+  width: 100%;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+
+.special-content > div {
+  padding: 10px;
+}
+.grid1 {
+  height: 420px !important;
+}
+.grid3 {
+  grid-column: 3;
+  grid-row: span 2;
+  height: 50%;
+}
+
+.grid4 {
+  margin-top: 12px;
+  grid-column: 3;
+  grid-row: span 2;
+  height: 50%;
+  border-radius: 3px;
+  border: 1px solid black;
+
+  box-shadow: 2px 2px 2px black;
+}
+
+.special-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: #1d6f95;
+  height: 30%;
+}
+
+.special-details div {
+  margin: 5px;
+}
+
+.special-details div:nth-child(1) p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.special-details div:nth-child(2) p {
+  font-size: 13px;
+  color: #8bc9e6;
+}
+
+.special-img-detail {
+  height: 70%;
+}
+.special-img-detail-alt {
+  height: 75%;
+}
+
+.special-details-alt {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 25%;
+  color: #000;
+  background-color: #b6dff5;
+}
+.special-img-detail img {
+  height: 100%;
+  width: 100%;
 }

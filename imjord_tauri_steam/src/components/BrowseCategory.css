@@ -1,0 +1,35 @@
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b2838;
+  height: 20vh;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.categories-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.categories-box div {
+  margin: 10px;
+}
+
+.categories-box img {
+  transition: transform 0.4s ease; /* Slow down the scaling transition */
+}
+
+.categories-box img:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* Scale the image on hover */
+}

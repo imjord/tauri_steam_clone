@@ -1,0 +1,44 @@
+.steam-deck {
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+
+  background-color: #1b2838;
+}
+
+.steam-deck-container {
+  display: flex;
+  width: 53.2%;
+
+  margin-top: 50px;
+}
+
+.steam-deck-img {
+  width: 70%;
+}
+
+.steam-deck-img img {
+}
+
+.valve-index {
+  width: 30%;
+}
+
+.steam-deck-img:hover {
+  cursor: pointer;
+}
+
+.steam-deck-img img:hover {
+  border-bottom: 2px solid #1b2838;
+  box-shadow: 0 0 6px 5px #80b9ff83; /* Adjust the values for your desired glow effect */
+}
+
+.valve-index:hover {
+  cursor: pointer;
+}
+
+.valve-index img:hover {
+  border-bottom: 2px solid #1b2838;
+
+  box-shadow: 0 0 6px 5px #80b9ff83; /* Adjust the values for your desired glow effect */
+}

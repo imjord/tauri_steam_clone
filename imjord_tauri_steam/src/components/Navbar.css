@@ -96,3 +96,20 @@ nav ul #link.active:hover::before {
   color: black !important;
   background-color: white;
 }
+
+.nav-little {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.nav-little span {
+  margin-left: 3px;
+}
+
+.nav-little:hover {
+  cursor: pointer;
+  color: white;
+}

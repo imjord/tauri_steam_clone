@@ -12,6 +12,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import littleLogo from "../assets/images/little-logo.png";
 function Navbar(props) {
   const { getSessionUser, sessionUser, relaunchApp } = props;
   const [active, setActive] = useState(false);
@@ -43,7 +44,12 @@ function Navbar(props) {
     <div className="nav">
       <div data-tauri-drag-region className="help-bar">
         <div data-tauri-drag-region className="left">
-          <p>Steam</p>
+          <div className="nav-little">
+            {" "}
+            <img src={littleLogo} />
+            <span>Steam</span>
+          </div>
+
           <p>View</p>
           <p>Friends</p>
           <p>Games</p>

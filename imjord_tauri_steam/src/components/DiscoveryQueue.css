@@ -1,0 +1,46 @@
+.queue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45vh;
+  background-color: #1b2838;
+  flex-direction: column;
+}
+
+.queue-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55%;
+  margin-bottom: 8px;
+}
+
+.queue-title div:nth-child(2) {
+  border: 1px solid gray;
+  padding: 0 10px;
+}
+.queue-title div:nth-child(2) p {
+  font-size: 12px;
+}
+
+.queue-title div:nth-child(2):hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.queue-title div:nth-child(1) p {
+  font-size: 14px;
+}
+
+.queue-content img:hover {
+  cursor: pointer;
+  filter: brightness(
+    1.1
+  ); /* Increase brightness on hover (adjust the value as needed) */
+}
+
+.queue-content {
+  transition: filter 0.3s ease;
+  outline: none;
+  border: none;
+}

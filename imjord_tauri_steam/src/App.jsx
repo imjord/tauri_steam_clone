@@ -106,8 +106,8 @@ function App() {
   const createWindow = async () => {
     const homeView = new WebviewWindow("home", {
       url: "/home",
-      height: 1100,
-      width: 1800,
+      height: 960,
+      width: 1700,
       decorations: false,
       fullscreen: false,
       resizable: false,

@@ -8,6 +8,9 @@ import StoreSideBar from "../components/StoreSideBar";
 import StoreCarousel from "../components/StoreCarousel";
 import StoreLandingImage from "../components/StoreLandingImage";
 import SpecialOffers from "../components/SpecialOffers";
+import SteamDeckBar from "../components/SteamDeckBar";
+import BrowseCategory from "../components/BrowseCategory";
+import DiscoveryQue from "../components/DiscoveryQue";
 function HomePage(props) {
   const { getSessionUser } = props;
   useEffect(() => {
@@ -23,7 +26,9 @@ function HomePage(props) {
       <StoreCarousel />
       {/* <hr className="hr" /> */}
       <SpecialOffers />
-
+      <SteamDeckBar />
+      <BrowseCategory />
+      <DiscoveryQue />
       <GameBar />
     </div>
   );
