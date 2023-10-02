@@ -222,3 +222,54 @@
   cursor: pointer;
   box-shadow: 0px 0px 10px 4px black;
 }
+
+.library-list {
+  height: 80%;
+  margin-top: 10px;
+}
+
+.recent-list {
+  width: 100%;
+}
+#plus {
+  font-size: 15px;
+}
+.recent-list p {
+  font-size: 13px;
+  padding: 1px;
+  padding-left: 5px;
+  background-color: #233244;
+}
+.recent-list p:hover {
+  cursor: pointer;
+  background-color: #374c65;
+}
+
+#imdying {
+  color: gray;
+}
+
+/* gamedropdown */
+.recent-games-list-idk {
+  background-color: #1b2026ec;
+}
+.recent-games-list-idk ul li {
+  list-style: none;
+}
+.recent-games-list-idk li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.recent-games-list-idk img {
+  width: 23px;
+  padding-right: 3px;
+}
+
+.recent-games-list-idk li:hover {
+  cursor: pointer;
+  background-color: #374c65;
+}

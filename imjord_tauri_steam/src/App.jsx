@@ -168,7 +168,7 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <div className="main-window">
+      <div className="main-window ">
         {registerPage ? (
           <Register createWindow={createWindow} />
         ) : signIn ? (
