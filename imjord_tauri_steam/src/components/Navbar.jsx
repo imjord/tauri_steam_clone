@@ -10,6 +10,7 @@ import {
   faBullhorn,
   faEnvelope,
   faUser,
+  faBell,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import littleLogo from "../assets/images/little-logo.png";
@@ -60,7 +61,7 @@ function Navbar(props) {
             <FontAwesomeIcon className="icon" icon={faBullhorn} />
           </p>
           <p title="View Notifications" className="nav-icon">
-            <FontAwesomeIcon className="icon" icon={faEnvelope} />
+            <FontAwesomeIcon className="icon" icon={faBell} />
           </p>
           <p className="guest-box" onClick={() => handleUserDropDown()}>
             <div>

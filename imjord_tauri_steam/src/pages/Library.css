@@ -1,5 +1,5 @@
 .library {
-  height: 100vh;
+  height: 90vh;
   background-color: #1b2838;
   margin-top: 75px;
   display: flex;
@@ -78,11 +78,19 @@
 /* #0d131b box background */
 
 .games-filter-box div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
   background-color: #1b2026ec;
   width: 85%;
   margin: 5px;
   padding: 5px;
   border-radius: 3px;
+}
+
+#faDownGame {
+  font-size: 15px;
+  margin-top: 5px;
+  color: gray;
 }
 .games-filter-box div:nth-child(1):hover {
   filter: brightness(1.5);
@@ -100,6 +108,117 @@
 #clock {
   color: gray;
 }
+#clock:hover {
+  filter: brightness(1.7);
+  cursor: pointer;
+}
 #play {
   color: gray;
+}
+#play:hover {
+  filter: brightness(1.55);
+  cursor: pointer;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+}
+
+#search-box {
+  position: absolute;
+  left: 15px;
+  color: gray;
+}
+
+.search-box input {
+  width: 97%;
+  border-radius: 0 !important;
+  background-color: #1b2026ec;
+}
+
+.search-box input::placeholder {
+  opacity: 0;
+}
+
+.search-box input:hover::placeholder {
+  color: gray;
+  padding-left: 10px;
+  opacity: 1;
+}
+
+#slider {
+  color: gray;
+  position: absolute;
+  right: 25px;
+}
+
+.library-right {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-left: 15px;
+}
+
+.recent-games-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 10%;
+}
+.recent-games-list p {
+  font-size: 15px;
+  color: rgb(170, 169, 169);
+  margin-left: 10px;
+}
+.recent-games-list hr {
+  background: linear-gradient(to right, transparent, rgb(37, 37, 37));
+  width: 900px;
+  height: 1px;
+  margin-left: 10px;
+}
+
+.sort-by-list {
+  height: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sort-by-list p {
+  font-size: 12px;
+  color: rgb(170, 169, 169);
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.sort-by-list span {
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 12px;
+  color: rgb(170, 169, 169);
+  background-color: rgb(77, 75, 75);
+  padding: 1px 4px;
+}
+
+.right-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 85%;
+}
+
+.right-list div {
+  margin: 10px;
+}
+.right-list img {
+  height: 250px;
+  box-shadow: 0px 0px 10px 4px black;
+}
+.right-list img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 4px black;
 }

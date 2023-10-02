@@ -21,7 +21,7 @@ html {
 .left p:hover {
   color: rgb(255, 255, 255);
   text-shadow: 0 0 10px rgb(255, 255, 255);
-  cursor: default;
+  cursor: pointer;
 }
 
 #right-hover-box:hover {
@@ -50,19 +50,20 @@ html {
   justify-content: flex-end;
   align-items: center;
   width: 10%;
-  padding: 0px 15px;
+  padding: 0px 5px;
 }
 
 .right p {
-  font-size: 11px;
+  font-size: 15px;
   margin-left: 10px;
   margin-right: 10px;
   color: #b3b6b4;
 }
 
 .nav-icon {
-  background-color: rgb(74, 159, 199);
-  padding: 5px 10px;
+  background-color: rgb(65, 78, 84);
+  padding: 2px 18px;
+  margin-top: 8px;
 }
 
 .guest-box {
@@ -71,6 +72,7 @@ html {
   color: #b3b6b4;
   border-radius: 2px;
   display: flex;
+  margin-top: 8px;
   border-right: 2px solid rgb(74, 159, 199);
 }
 
@@ -91,12 +93,12 @@ html {
 }
 
 .nav-icon:hover {
-  background-color: rgb(50, 109, 136);
-  cursor: default;
+  filter: brightness(1.5);
+  cursor: pointer;
 }
 
 .icon {
-  color: rgb(255, 255, 255);
+  color: rgb(160, 160, 160);
 }
 .steam-intro {
   position: relative;
