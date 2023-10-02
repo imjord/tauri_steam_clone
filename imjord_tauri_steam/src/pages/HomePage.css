@@ -9,6 +9,12 @@
   align-items: flex-start;
 }
 
+.side {
+  position: absolute;
+  height: 1500px;
+  width: 250px;
+  margin-left: 25px;
+}
 /* .hr {
   width: 61.5%;
   margin: -1px auto;

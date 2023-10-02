@@ -1,0 +1,33 @@
+.home-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.side-ul-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-ul-list ul {
+  list-style: none;
+}
+
+.side-ul-list h2 {
+  color: #557d9a;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.side-ul-list li {
+  color: #506f86;
+  font-size: 13.5px;
+}
+
+.side-ul-list ul li:hover {
+  cursor: pointer;
+  color: #30a2d3;
+}

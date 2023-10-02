@@ -12,6 +12,7 @@ import SteamDeckBar from "../components/SteamDeckBar";
 import BrowseCategory from "../components/BrowseCategory";
 import DiscoveryQue from "../components/DiscoveryQue";
 import GameListings from "../components/GameListings";
+import HomeSide from "../components/HomeSide";
 function HomePage(props) {
   const { getSessionUser } = props;
   useEffect(() => {
@@ -23,6 +24,9 @@ function HomePage(props) {
       {/* <Footer /> */}
       <div className="landing">
         <StoreLandingImage />
+      </div>
+      <div className="side">
+        <HomeSide />
       </div>
       <StoreCarousel />
       {/* <hr className="hr" /> */}
