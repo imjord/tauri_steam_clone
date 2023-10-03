@@ -27,7 +27,7 @@
 .profile-content-div {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 55%;
   height: 100%;
   z-index: 2;
   opacity: 0.8;

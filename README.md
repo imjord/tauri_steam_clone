@@ -23,7 +23,7 @@ A clone of the Steam platform using Tauri.
 
 ```
 
-2. Start the server with npm run dev.
+2. Start the server with npm run dev.  You will need MongoDB installed. A local DB will be made.
 
 ```
 
