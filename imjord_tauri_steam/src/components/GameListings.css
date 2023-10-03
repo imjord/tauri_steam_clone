@@ -9,11 +9,13 @@
 .game-listing-title-container {
   display: flex;
   justify-content: center;
+
   width: 100%;
 }
 
 .game-listing-title {
   display: flex;
+
   width: 50%;
 }
 
@@ -97,16 +99,27 @@
 
 .game-cards-images-details {
   display: flex;
+
   width: 30%;
 }
-
+/* sorry i did absolute position cause i suck */
 .cards-details {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  width: 372px;
+  right: 700px;
+  height: 70px;
+  background-color: #9bc1d7;
+}
+.cards-details-alt {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   height: 100%;
-  background-color: #9bc1d7;
+  background-color: #1e3243;
 }
 
 .card-details-p {
@@ -124,6 +137,10 @@
   height: 100%;
 }
 
+.cards-details-alt .card-details-p {
+  color: white;
+}
+
 .card-details-tags {
   color: gray;
   font-size: 12px;
@@ -133,7 +150,16 @@
   display: flex;
   align-items: center;
   height: 100%;
+  padding-right: 55px;
   width: 70%;
+  justify-content: space-between;
+}
+.card-details-price-alt {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  padding-right: 20px;
   justify-content: space-between;
 }
 
@@ -170,6 +196,7 @@
   align-items: center;
   background-color: #9bc1d7;
   flex-direction: column;
+  margin-left: 10px;
 }
 
 .game-cards-images-title p {

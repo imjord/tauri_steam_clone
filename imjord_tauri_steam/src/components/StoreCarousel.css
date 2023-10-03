@@ -122,9 +122,10 @@
   margin: 0 5px;
   font-size: 12px;
   text-align: center;
+
   padding: 2px 4px;
   background-color: #393d42;
-  width: 100%;
+  width: 90px;
 }
 
 .price {

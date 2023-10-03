@@ -17,6 +17,9 @@ import littleLogo from "../assets/images/little-logo.png";
 function Navbar(props) {
   const { getSessionUser, sessionUser, relaunchApp } = props;
   const [active, setActive] = useState(false);
+  const [activeLibrary, setActiveLibrary] = useState(false);
+  const [activeCommunity, setActiveCommunity] = useState(false);
+  const [activeProfile, setActiveProfile] = useState(false);
   const [userDropDown, setUserDropDown] = useState(false);
 
   const logout = async () => {
@@ -36,7 +39,28 @@ function Navbar(props) {
   };
 
   const setActiveNavbar = () => {
+    setActiveLibrary(false);
+    setActiveCommunity(false);
+    setActiveProfile(false);
     setActive(true);
+  };
+  const setActiveLibraryNavbar = () => {
+    setActive(false);
+    setActiveCommunity(false);
+    setActiveProfile(false);
+    setActiveLibrary(true);
+  };
+  const setActiveCommunityNavbar = () => {
+    setActive(false);
+    setActiveProfile(false);
+    setActiveLibrary(false);
+    setActiveCommunity(true);
+  };
+  const setActiveProfileNavbar = () => {
+    setActive(false);
+    setActiveLibrary(false);
+    setActiveCommunity(false);
+    setActiveProfile(true);
   };
   useEffect(() => {
     getSessionUser();
@@ -46,7 +70,6 @@ function Navbar(props) {
       <div data-tauri-drag-region className="help-bar">
         <div data-tauri-drag-region className="left">
           <div className="nav-little">
-            {" "}
             <img src={littleLogo} />
             <span>Steam</span>
           </div>
@@ -80,7 +103,6 @@ function Navbar(props) {
                     to="/profile"
                     onClick={() => handleUserDropDown()}
                   >
-                    {" "}
                     View my account
                   </Link>
                 </p>
@@ -121,46 +143,20 @@ function Navbar(props) {
         <ul>
           <FontAwesomeIcon id="arrow" icon={faArrowLeft} />
           <FontAwesomeIcon id="arrow" icon={faArrowRight} />
-          <NavLink
-            id="link"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-            to="/home"
-          >
-            {" "}
-            <li>STORE</li>{" "}
-          </NavLink>
-          <NavLink
-            id="link"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-            to="/library"
-          >
-            {" "}
-            <li>LIBRARY</li>{" "}
-          </NavLink>
-          <NavLink
-            id="link"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-            to="/community"
-          >
-            {" "}
-            <li>COMMUNITY</li>{" "}
-          </NavLink>
-          <NavLink
-            id="link"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-            to="/profile"
-          >
-            {" "}
-            <li>{sessionUser?.username?.toUpperCase()}</li>{" "}
-          </NavLink>
+          <Link onClick={setActiveNavbar} id="link" to="/home">
+            <li className={active ? "active" : null}>STORE</li>
+          </Link>
+          <Link onClick={setActiveLibraryNavbar} id="link" to="/library">
+            <li className={activeLibrary ? "active" : null}>LIBRARY</li>
+          </Link>
+          <Link onClick={setActiveCommunityNavbar} id="link" to="/community">
+            <li className={activeCommunity ? "active" : null}>COMMUNITY</li>
+          </Link>
+          <Link onClick={setActiveProfileNavbar} id="link" to="/profile">
+            <li className={activeProfile ? "active" : null}>
+              {sessionUser?.username?.toUpperCase()}
+            </li>
+          </Link>
         </ul>
       </nav>
     </div>

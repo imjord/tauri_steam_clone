@@ -43,36 +43,12 @@ nav ul #link.pending:hover {
   color: #b3b6b4;
 }
 
-/* dumb chatgpt hover stuff */
-/* 
- */
-/*  */
-/*  */
-nav ul #link.active {
-  color: rgb(74, 159, 199);
-  position: relative; /* Ensure pseudo-element is positioned relative to this */
-}
-
-/* Create a pseudo-element for the animated bar */
-nav ul #link.active::before {
-  content: ""; /* Empty content for the pseudo-element */
-  position: absolute;
-  bottom: -3px; /* Position the bar just below the link text */
-  left: 50%; /* Position the bar at the middle of the link */
-  transform: translateX(-50%); /* Center the bar horizontally */
-  width: 0; /* Initial width of the bar */
-  height: 3px; /* Height of the bar */
-  background-color: rgb(74, 159, 199);
-  border-radius: 2px;
-  transition: width 0.3s ease-in-out; /* Add a transition for smooth animation */
-}
-
-/* On hover, expand the bar to the width of the link text */
-nav ul #link.active:hover::before {
-  width: 100%;
-}
-
 /* styles for hover title */
+
+.active {
+  color: rgb(74, 159, 199) !important;
+  border-bottom: 2px solid rgb(74, 159, 199);
+}
 
 /* user drop down */
 .manage-user-dropdown {

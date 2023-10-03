@@ -13,6 +13,7 @@ import BrowseCategory from "../components/BrowseCategory";
 import DiscoveryQue from "../components/DiscoveryQue";
 import GameListings from "../components/GameListings";
 import HomeSide from "../components/HomeSide";
+
 function HomePage(props) {
   const { getSessionUser } = props;
   useEffect(() => {

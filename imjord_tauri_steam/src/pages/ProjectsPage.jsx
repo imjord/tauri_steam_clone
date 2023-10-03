@@ -93,22 +93,18 @@ const ProjectsPage = () => {
                     <img src={minimass} />
                     Mass Effect Legendary Edition
                   </li>
-
                   <li>
                     <img src={ministar} />
                     Starfield
                   </li>
-
                   <li>
                     <img src={miniskyrim} />
                     The Elder Scrolls V: Skyrim Special Edition
                   </li>
-
                   <li>
                     <img src={minigta} />
                     Grand Theft Auto V
                   </li>
-
                   <li>
                     <img src={minimorrow} />
                     The Elder Scrolls III: Morrowwind

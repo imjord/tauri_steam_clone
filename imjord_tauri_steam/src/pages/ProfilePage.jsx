@@ -8,6 +8,8 @@ import {
   faSortDown,
 } from "@fortawesome/free-solid-svg-icons";
 import ProfileHourCard from "../components/ProfileHourCard";
+import GameBar from "../components/GameBar.jsx";
+import profilePic from "../assets/images/profilepic.gif";
 
 const ProfilePage = (props) => {
   const { sessionUser } = props;
@@ -17,10 +19,7 @@ const ProfilePage = (props) => {
       <div className="profile-content-div">
         <div className="profile-content-title">
           <div className="profile-pic">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/6/62/Agent_47_in_Hitman_Absolution.png"
-              alt="profile-pic"
-            />
+            <img src={profilePic} alt="profile-pic" />
           </div>
           <div className="profile-bio">
             <h1>{sessionUser.username}</h1>
@@ -64,6 +63,7 @@ const ProfilePage = (props) => {
           <ProfileHourCard />
         </div>
       </div>
+      <GameBar />
     </div>
   );
 };

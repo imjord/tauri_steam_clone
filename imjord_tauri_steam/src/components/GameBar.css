@@ -10,6 +10,7 @@
   background-color: #171a21;
   color: rgb(128, 136, 159);
   text-align: center;
+  z-index: 9999;
 }
 
 #add-game-icon {
