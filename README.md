@@ -64,7 +64,7 @@ Do you have ideas for additional features? Feel free to share your suggestions b
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as you see fit.
+This project is open-source and available under the MIT License. Feel free to use, modify, and distribute it as you see fit.
 
 ## Disclaimer
 
