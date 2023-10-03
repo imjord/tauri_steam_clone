@@ -47,6 +47,7 @@ A clone of the Steam platform using Tauri.
 
 ## Usage
 
+Youtube video with a demo.
 [Demo Video](https://youtu.be/WqFLQ1CKIQs)
 
 ## Contributing
