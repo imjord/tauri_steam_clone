@@ -23,7 +23,7 @@ app.use(
 // session store db
 
 const options = {
-  mongoUrl: process.env.MONGO_URI,
+  mongoUrl: "mongodb://127.0.0.1:27017/imjord_tauri_steam",
 };
 
 const store = MongoStore.create(options);

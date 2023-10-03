@@ -133,9 +133,11 @@ html {
     transform: translateX(-50%);
   }
 }
-
+.steam-logo {
+}
 #steam-logo {
-  opacity: 0.9;
+  opacity: 0.8;
+  border-radius: 50%;
 }
 
 .accounts {

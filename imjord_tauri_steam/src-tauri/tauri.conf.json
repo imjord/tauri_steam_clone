@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "imjord_tauri_steam",
+    "productName": "tauri_steam_clone",
     "version": "0.0.0"
   },
   "tauri": {
@@ -39,14 +39,8 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
+      "identifier": "com.github.imjord",
+      "icon": ["icons/steam.ico"]
     },
     "security": {
       "csp": null
