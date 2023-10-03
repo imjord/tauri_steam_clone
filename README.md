@@ -47,7 +47,7 @@ A clone of the Steam platform using Tauri.
 
 ## Usage
 
-[Demo Video](demo-vid1.mp4)
+[Demo Video](https://youtu.be/WqFLQ1CKIQs)
 
 ## Contributing
 
@@ -68,6 +68,6 @@ This project is open-source and available under the MIT License. Feel free to us
 
 ## Disclaimer
 
-This application is not affiliated with the official Steam platform. It is a clone created for educational and experimental purposes only.
+This application is not affiliated with the official Steam platform. It is a clone created for educational and learning purposes only.
 
 Made with <3 Imjord
