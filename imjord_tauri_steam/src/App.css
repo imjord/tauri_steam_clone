@@ -133,13 +133,16 @@ html {
     transform: translateX(-50%);
   }
 }
-.steam-logo {
-}
-#steam-logo {
-  opacity: 0.8;
-  border-radius: 50%;
+
+.back-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
+.back-container h4 {
+  font-size: 30px;
+}
 .accounts {
   display: flex;
 

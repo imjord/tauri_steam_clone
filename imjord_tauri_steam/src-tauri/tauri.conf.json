@@ -40,7 +40,7 @@
       "active": true,
       "targets": "all",
       "identifier": "com.github.imjord",
-      "icon": ["icons/steam.ico"]
+      "icon": ["icons/vapor_icon.ico"]
     },
     "security": {
       "csp": null
@@ -49,11 +49,11 @@
       {
         "fullscreen": false,
         "label": "main",
-        "resizable": true,
+        "resizable": false,
         "titleBarStyle": "Transparent",
         "hiddenTitle": true,
-        "width": 700,
-        "height": 440,
+        "width": 715,
+        "height": 460,
         "decorations": false
       }
     ]

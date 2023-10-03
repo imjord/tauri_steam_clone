@@ -13,7 +13,8 @@ import {
   faBell,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import littleLogo from "../assets/images/little-logo.png";
+import vapor_svg1 from "../assets/images/vapor_svg1.svg";
+
 function Navbar(props) {
   const { getSessionUser, sessionUser, relaunchApp } = props;
   const [active, setActive] = useState(false);
@@ -70,8 +71,8 @@ function Navbar(props) {
       <div data-tauri-drag-region className="help-bar">
         <div data-tauri-drag-region className="left">
           <div className="nav-little">
-            <img src={littleLogo} />
-            <span>Steam</span>
+            <img src={vapor_svg1} />
+            <span>Vapor</span>
           </div>
 
           <p>View</p>

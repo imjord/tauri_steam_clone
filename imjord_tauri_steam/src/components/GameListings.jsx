@@ -152,7 +152,7 @@ const GameListings = () => {
               <div className="cards-details-alt">
                 <div className="card-details-title">
                   <div className="card-details-p">
-                    <p>EA SPORTS&trade; 24</p>
+                    <p>Football 24</p>
                     <img
                       id="windows-logo"
                       src={windows}

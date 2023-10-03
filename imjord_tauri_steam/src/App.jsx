@@ -2,18 +2,10 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar.jsx";
 import { appWindow, getCurrent, WebviewWindow } from "@tauri-apps/api/window";
 import { relaunch, exit } from "@tauri-apps/api/process";
-
 import "./App.css";
 import "./SignIn.css";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import {
-  faWindowMaximize,
-  faBullhorn,
-  faEnvelope,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
@@ -21,10 +13,13 @@ import CommunityPage from "./pages/CommunityPage.jsx";
 import Register from "./pages/Register.jsx";
 
 // image
-import steamLogo from "./assets/images/steamLogo.png";
 import signInBack from "./assets/images/signin_back.png";
-import steam_signin_logo from "./assets/images/steam_signin_logo.png";
 import qr from "./assets/images/qr-code.png";
+
+// VAPOR
+
+import vapor_small from "./assets/images/vapor_small.png";
+
 function App() {
   const [sessionUser, setSessionUser] = useState({});
   const [user, setUser] = useState(false);
@@ -178,7 +173,12 @@ function App() {
             </div>
             <div className="back-container">
               <img onClick={handleSignInView} src={signInBack}></img>
-              <img src={steam_signin_logo} alt="singin-steam-logo"></img>
+              <img
+                id="signin-vapor-img"
+                src={vapor_small}
+                alt="singin-steam-logo"
+              ></img>
+              <h4>VAPOR</h4>
             </div>
             <div className="form-container">
               <form className="sign-in-form" onSubmit={handleSubmit}>
@@ -252,9 +252,9 @@ function App() {
             ></div>
             <div className="accounts-logo">
               <div className="steam-logo">
-                <img src={steamLogo} alt="steam-logo" id="steam-logo"></img>
+                <img src={vapor_small} alt="vapor-logo" id="steam-logo"></img>
               </div>
-              <h1 className="steam-title">STEAM</h1>
+              <h1 className="steam-title">VAPOR</h1>
             </div>
             <div className="accounts-info">
               <div className="accounts-title">
