@@ -62,6 +62,7 @@ const StoreCarousel = () => {
               </div>
             </div>
           </div>
+          <div className="carousel">{}</div>
         </div>
       </div>
       <div>

@@ -54,6 +54,7 @@ const Register = (props) => {
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
               <input
+                autoComplete="off"
                 type="email"
                 id="email"
                 name="email"
@@ -64,6 +65,7 @@ const Register = (props) => {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
+                autoComplete="off"
                 type="password"
                 id="password"
                 name="password"

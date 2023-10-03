@@ -188,6 +188,7 @@ function App() {
                   </label>
                   <input
                     type="text"
+                    autoComplete="off"
                     id="accountName"
                     value={accountName}
                     onChange={(e) => setAccountName(e.target.value)}

@@ -31,7 +31,7 @@ const SpecialOffers = () => {
                 <p>WEEKEND DEAL</p>
               </div>
               <div>
-                <p>Offer ends Oct 5 @ 11:00am.</p>
+                <p>Offer ends Oct 16 @ 11:00am.</p>
               </div>
               <div>
                 <p>50% off</p>
@@ -44,13 +44,13 @@ const SpecialOffers = () => {
             </div>
             <div className="special-details">
               <div>
-                <p>WEEKEND DEAL</p>
+                <p>PUBLISHER SALE</p>
               </div>
               <div>
                 <p>Offer ends Oct 5 @ 11:00am.</p>
               </div>
               <div>
-                <p>50% off</p>
+                <p>Up to -90%</p>
               </div>
             </div>
           </div>
@@ -60,8 +60,15 @@ const SpecialOffers = () => {
                 <img src={grid3} alt="grid1 image" />
               </div>
               <div className="special-details-alt">
-                <div>Today's deal!</div>
-                <div>50% off</div>
+                <div className="today">Today's deal!</div>
+                <div className="deals">
+                  <div>
+                    <p>-30%</p>
+                  </div>
+                  <div>
+                    <p>$14.99</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="grid4">
@@ -69,8 +76,15 @@ const SpecialOffers = () => {
                 <img src={grid4} alt="grid1 image" />
               </div>
               <div className="special-details-alt">
-                <div>Today's deal!</div>
-                <div>50% off</div>
+                <div className="today">Today's deal!</div>
+                <div className="deals">
+                  <div>
+                    <p>-50%</p>
+                  </div>
+                  <div>
+                    <p>$19.99</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

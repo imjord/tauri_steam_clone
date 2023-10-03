@@ -1,6 +1,6 @@
 # Tauri Steam Clone
 
-![Project Logo](link_to_project_logo)
+![Project Logo](vapor_logo.png)
 
 A clone of the Steam platform using Tauri.
 
@@ -9,6 +9,7 @@ A clone of the Steam platform using Tauri.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Roadmap](#roadmap)
 - [License](#license)
 - [Disclaimer](#disclaimer)
 
@@ -34,7 +35,7 @@ A clone of the Steam platform using Tauri.
 
 ```
 
-3. While the server is running npm run tauri dev in the other terminal you created and the application should open.
+3. While the server is running npm run tauri dev in the other terminal you created.
 
 ```
 
@@ -46,11 +47,20 @@ A clone of the Steam platform using Tauri.
 
 ## Usage
 
-[Demo Video](link_to_demo_video) (Coming Soon)
+[Demo Video](demo-vid.mp4)
 
 ## Contributing
 
-We welcome contributions from the community. If you encounter issues or have suggestions for improvements, please create [GitHub Issues](https://github.com/imjord/tauri_steam_clone/issues).
+I welcome contributions from the community. If you encounter issues or have suggestions for improvements, please create [GitHub Issues](https://github.com/imjord/tauri_steam_clone/issues).
+
+## Roadmap
+
+Here's a glimpse of what i plan to implement in the future, right now this project is just mvp with little to no functionality.
+
+- Store Carousel.
+- Actually add games by exe paths on users computers.
+
+Do you have ideas for additional features? Feel free to share your suggestions by opening an issue.
 
 ## License
 

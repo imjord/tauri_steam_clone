@@ -169,7 +169,8 @@ html {
 .steam-title {
   margin: 10px;
   letter-spacing: 2px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .accounts-title {
@@ -258,7 +259,7 @@ html {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #3b3b3b;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* Handle on hover */
