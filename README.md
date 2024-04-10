@@ -1,6 +1,8 @@
 # Tauri Steam Clone
 
+![Project Screenshot](stclone.png)
 ![Project Logo](vapor_logo.png)
+
 
 A clone of the Steam platform using Tauri.
 
